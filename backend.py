@@ -6,6 +6,7 @@ from langchain.prompts import PromptTemplate
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from langchain.memory import ConversationBufferMemory
 from dotenv import load_dotenv
+from flask import Flask, request, jsonify
 load_dotenv()
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 if not GOOGLE_API_KEY:
@@ -87,9 +88,24 @@ def answer_question(question: str) -> str:
     return response
 
 
-# def chatbot(input_text):
-#     return f"Bot: You said '{input_text}'"
 
-# iface = gr.Interface(fn=chatbot, inputs="text", outputs="text")
-# iface.launch(server_name="0.0.0.0", server_port=7860)
+
+app = Flask(__name__)
+
+@app.route("/ask", methods=["POST"])
+def ask():
+    data = request.json
+    question = data.get("question", "")
+    if not question:
+        return jsonify({"error": "Question is required"}), 400
+    
+    answer = answer_question(question)
+    return jsonify({"answer": answer})
+
+@app.route("/", methods=["GET"])
+def home():
+    return "DSA Chatbot is running!"
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=10000)
 
