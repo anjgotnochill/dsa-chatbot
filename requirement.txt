@@ -1,0 +1,17 @@
+langchain_community
+pinecone
+deep_translator
+flask_cors
+twilio
+langchain_openai
+waitress
+streamlit
+chromadb
+langchain community
+pypdf
+unstructured
+gradio
+openai
+transformers
+langchain
+google-generativeai
