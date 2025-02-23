@@ -13,3 +13,4 @@ langchain
 google-generativeai
 protobuf
 python-dotenv
+langchain_google_genai
