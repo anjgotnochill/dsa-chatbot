@@ -1,13 +1,15 @@
 # backend.py
 import os
-from langchain_chroma import Chroma
+from langchain.vectorstores import Chroma
 from langchain.chains import ConversationalRetrievalChain
 from langchain.prompts import PromptTemplate
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from langchain.memory import ConversationBufferMemory
-import gradio as gr
-
-os.environ["GOOGLE_API_KEY"] = "AIzaSyC1gbmW2Ustea8qLtDrq5rmGH6_etcCSJ4"
+from dotenv import load_dotenv
+load_dotenv()
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+if not GOOGLE_API_KEY:
+    raise ValueError("Missing GOOGLE_API_KEY. Set it in the .env file.")
 PERSIST_DIRECTORY = r"C:\\Users\\DC\\Downloads\\phirse"  # Hardcoded persist directory
 
 # Initialize embeddings and vector store once (for efficiency)

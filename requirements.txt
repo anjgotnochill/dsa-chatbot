@@ -12,3 +12,4 @@ transformers
 langchain
 google-generativeai
 protobuf
+python-dotenv

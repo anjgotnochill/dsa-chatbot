@@ -1,8 +1,7 @@
 import streamlit as st
 import base64
 from backend import answer_question
-import gradio as gr
-# from backend import chatbot  # Import chatbot function from backend.py
+
 # ✅ Set page config with Saturn icon 🪐
 st.set_page_config(page_title="DSAmaiMadad", page_icon="🪐", layout="wide")
 
