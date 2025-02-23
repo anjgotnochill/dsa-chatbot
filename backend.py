@@ -26,7 +26,9 @@ vector_store = Chroma(
 retriever = vector_store.as_retriever(search_kwargs={"k": 5})
 
 # Memory for conversation history
-memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
+# memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
+memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True, output_key="answer")
+
 
 # Prompt template
 custom_template = """   
@@ -107,5 +109,8 @@ def home():
     return "DSA Chatbot is running!"
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=10000)
+    port = int(os.environ.get("PORT", 5000))  # Default to 5000 if PORT is not set
+    app.run(host="0.0.0.0", port=port)
+
+  
 
