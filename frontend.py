@@ -7,7 +7,9 @@ import requests
 st.set_page_config(page_title="DSAmaiMadad", page_icon="🪐", layout="wide")
 
 # ✅ Apply CSS to set background image
-background_image = "https://github.com/anjgotnochill/dsa-chatbot/blob/main/img.jpeg"
+
+background_image = "https://raw.githubusercontent.com/anjgotnochill/dsa-chatbot/main/img.jpeg"
+
 st.markdown(
     f"""
     <style>
@@ -41,7 +43,7 @@ backend_url = "https://dsa-chatbot.onrender.com"
 def get_answer_from_backend(prompt):
     try:
         # Send POST request to the backend with the user prompt
-        response = requests.post(f"{backend_url}/answer", json={"question": prompt})
+        response = requests.post(f"{backend_url}/ask", json={"question": prompt})
         # Return the answer from the backend response
         return response.text
     except Exception as e:
