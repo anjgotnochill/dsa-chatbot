@@ -1,12 +1,13 @@
 import streamlit as st
 import base64
-from backend import answer_question
+import requests  
+# from backend import answer_question
 
 # ✅ Set page config with Saturn icon 🪐
 st.set_page_config(page_title="DSAmaiMadad", page_icon="🪐", layout="wide")
 
 # ✅ Apply CSS to set background image
-background_image = "C:\\Users\\DC\\Downloads\\phirse\\img.jpeg"  
+background_image = "https://github.com/anjgotnochill/dsa-chatbot/blob/main/img.jpeg"
 st.markdown(
     f"""
     <style>
@@ -36,13 +37,17 @@ st.title("🪐 DSAmaiMadad")  # ✅ Saturn icon in title
 # ✅ Initialize chat history
 if "messages" not in st.session_state:
     st.session_state.messages = []
-
+backend_url = "https://dsa-chatbot.onrender.com"
+def get_answer_from_backend(prompt):
+    try:
+        # Send POST request to the backend with the user prompt
+        response = requests.post(f"{backend_url}/answer", json={"question": prompt})
+        # Return the answer from the backend response
+        return response.text
+    except Exception as e:
+        st.error(f"Error: {str(e)}")
+        return "Sorry, there was an issue getting the answer."
 # ✅ Display chat history
-for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
-        st.markdown(message["content"])
-
-# ✅ User Input
 if prompt := st.chat_input("Batao..."):
     st.session_state.messages.append({"role": "user", "content": prompt})
 
@@ -52,7 +57,8 @@ if prompt := st.chat_input("Batao..."):
     with st.chat_message("assistant"):
         with st.spinner("soch raha hoon..."):
             try:
-                answer = answer_question(prompt)
+                # Call the backend for the answer
+                answer = get_answer_from_backend(prompt)
                 st.markdown(answer)
                 st.session_state.messages.append({"role": "assistant", "content": answer})
             except Exception as e:
@@ -62,7 +68,6 @@ if prompt := st.chat_input("Batao..."):
 if st.button("🌙 Clear Chat"):
     st.session_state.messages = []
     st.rerun()  # ✅ Refreshes the page
-
 
 # iface = gr.Interface(fn=chatbot, inputs="text", outputs="text")
 # iface.launch(server_name="0.0.0.0", server_port=7860)
