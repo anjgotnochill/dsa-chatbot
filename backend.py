@@ -7,6 +7,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmb
 from langchain.memory import ConversationBufferMemory
 from dotenv import load_dotenv
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 load_dotenv()
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 if not GOOGLE_API_KEY:
@@ -111,6 +112,9 @@ def home():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))  # Default to 5000 if PORT is not set
     app.run(host="0.0.0.0", port=port)
+
+# Enable CORS for all routes
+CORS(app)
 
   
 
