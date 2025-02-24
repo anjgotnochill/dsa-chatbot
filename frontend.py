@@ -7,7 +7,7 @@ from backend import chatbot
 st.set_page_config(page_title="DSAmaiMadad", page_icon="🪐", layout="wide")
 
 
-background_image = "C:\\Users\\DC\\Downloads\\phirse\\9764d489-add8-4033-b052-fde0b79fbaa6.jpg"
+background_image = "bg_img.jpg"
 # C:\\Users\\DC\\Downloads\\phirse\\img.jpeg
 st.markdown(
     f"""
