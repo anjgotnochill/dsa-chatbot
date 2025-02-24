@@ -6,11 +6,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_community.vectorstores import Chroma
 
-from dotenv import load_dotenv
-load_dotenv()
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-if not GOOGLE_API_KEY:
-    raise ValueError("Missing GOOGLE_API_KEY. Set it in the .env file.")
+os.environ["GOOGLE_API_KEY"] = "YOUR_API_KEY"
 
 
 def fetch_webpage_content(url):
@@ -124,3 +120,8 @@ if __name__ == "__main__":
 
     vector_db_path = "C:\\Users\\DC\\Downloads\\phirse"
     ingest_webpages(urls, vector_db_path)
+
+
+
+
+      
