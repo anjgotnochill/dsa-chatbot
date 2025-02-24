@@ -63,17 +63,24 @@ iii.Set Up API Key :
 Add your Gemini API key in the environment variables or modify backend.py accordingly.
 
 iv.Run the Chatbot :
+
 python ingesturl.py
+
 python backend.py
+
 streamlit run frontend.py
 
 $ Deployment :
+
 To deploy, you can use platforms like Streamlit Sharing, Heroku, Vercel, or AWS.
 Ensure all necessary environment variables (API keys, database credentials) are configured securely.
 
 6.Future Improvements :
+
 Integration with additional competitive programming platforms.
+
 Enhanced NLP capabilities for better code explanations.
+
 Interactive coding environment support.
 
 7.Contributing :
