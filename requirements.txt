@@ -7,6 +7,9 @@ uvicorn
 
 streamlit
 
+langchain
+langchain-google-genai
+chromadb
 
 google-generativeai
 google-api-core
@@ -19,7 +22,7 @@ requests
 beautifulsoup4
 
 
-chromadb
+
 pinecone
 faiss-cpu  
 
