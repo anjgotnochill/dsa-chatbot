@@ -1,12 +1,14 @@
 # backend.py
 import os
+import sys
+import pysqlite3
 from langchain_community.vectorstores import Chroma
 from langchain.chains import ConversationalRetrievalChain
 from langchain.prompts import PromptTemplate
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from langchain.memory import ConversationBufferMemory
 from flask import Flask, request, jsonify
-
+sys.modules['sqlite3'] = pysqlite3
 os.environ["GOOGLE_API_KEY"] = "YOUR_API_KEY"
 PERSIST_DIRECTORY = r"YOU_SYSTEM_PATH" 
 
