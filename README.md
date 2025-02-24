@@ -34,7 +34,7 @@ $ Prerequisites :
 $ Steps :
 
 i.Clone the Repository :
-git clone https://github.com/yourusername/dsa-companion.git
+git clone https://github.com/anjgotnochill/dsa-companion.git
 cd dsa-companion
 
 ii.Install Dependencies :
