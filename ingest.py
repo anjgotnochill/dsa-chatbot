@@ -4,11 +4,9 @@ import os
 import glob
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from dotenv import load_dotenv
-load_dotenv()
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-if not GOOGLE_API_KEY:
-    raise ValueError("Missing GOOGLE_API_KEY. Set it in the .env file.")
+import streamlit as st
+GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
+os.environ["GOOGLE_API_KEY"] = GOOGLE_API_KEY
 #from langchain_openai import OpenAIEmbeddings
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_community.vectorstores import Chroma
