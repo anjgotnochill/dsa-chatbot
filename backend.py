@@ -5,10 +5,12 @@ from langchain.chains import ConversationalRetrievalChain
 from langchain.prompts import PromptTemplate
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from langchain.memory import ConversationBufferMemory
-import gradio as gr
 
-os.environ["GOOGLE_API_KEY"] = "AIzaSyC1gbmW2Ustea8qLtDrq5rmGH6_etcCSJ4"
-PERSIST_DIRECTORY = r"C:\\Users\\DC\\Downloads\\phirse"  
+import streamlit as st
+GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
+os.environ["GOOGLE_API_KEY"] = GOOGLE_API_KEY
+PERSIST_DIRECTORY = os.path.join(os.getcwd(), "vectorstore")
+ 
 
 # Initialize embeddings and vector store 
 embeddings = GoogleGenerativeAIEmbeddings(
