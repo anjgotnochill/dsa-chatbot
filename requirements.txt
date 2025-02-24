@@ -21,7 +21,7 @@ chardet==5.2.0
 charset-normalizer==3.4.1
 Chroma==0.2.0
 chroma-hnswlib==0.7.6
-chromadb==0.6.3
+chromadb==0.4.24
 click==8.1.8
 cohere==5.13.12
 colorama==0.4.6
