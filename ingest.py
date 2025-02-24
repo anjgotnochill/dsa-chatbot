@@ -26,14 +26,13 @@ def ingest_pdfs(pdf_directory: str, persist_directory: str):
         documents.extend(docs)
     
     print(f"Total documents loaded: {len(documents)}")
-    gemini_api_key="AIzaSyAL-MqVMzObsWJSMvsHk_imR4b5esDmQcM"
+  
     # Split documents into smaller chunks with overlap for improved retrieval
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=2000, chunk_overlap=500)
     docs = text_splitter.split_documents(documents)
     print(f"Documents split into {len(docs)} chunks.")
 
-    if not gemini_api_key:
-        raise ValueError("GEMINI_API_KEY environment variable not set.")
+   
 
     embeddings = GoogleGenerativeAIEmbeddings(google_api_key=gemini_api_key,model="models/text-embedding-004")
     
@@ -47,6 +46,6 @@ def ingest_pdfs(pdf_directory: str, persist_directory: str):
 
 
 if __name__ == "__main__":
-    pdf_directory = "C:\\Users\\Piyush\\Desktop\\Project 2\\naam"  # Update this path to your PDFs folder
-    vector_db_path = "C:\\Users\\Piyush\\Desktop\\Project 2\\test1"           # Location to store the vector database
+    pdf_directory = ""  # Update this path to your PDFs folder
+    vector_db_path = ""           # Location to store the vector database
     ingest_pdfs(pdf_directory, vector_db_path)
