@@ -6,7 +6,9 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_community.vectorstores import Chroma
 
-os.environ["GOOGLE_API_KEY"] = "YOUR_API_KEY"
+import streamlit as st
+GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
+os.environ["GOOGLE_API_KEY"] = GOOGLE_API_KEY
 
 
 def fetch_webpage_content(url):
