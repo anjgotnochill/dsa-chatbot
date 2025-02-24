@@ -5,6 +5,7 @@ DSA Companion: A RAG-Based Data Structures and Algorithms Chatbot
 DSA Companion is a Retrieval-Augmented Generation (RAG)-based chatbot designed to assist students and professionals in mastering Data Structures and Algorithms (DSA). It provides personalized guidance, explanations, and coding solutions to enhance problem-solving skills.
 
 2. Features :
+   
 i.DSA Guidance: Offers explanations for various data structures and algorithms.
 ii.Problem-Solving Assistance: Provides solutions to coding problems with time and space complexity analysis.
 iii.RAG-Based Approach: Retrieves relevant data from sources such as GitHub, competitive programming platforms, textbooks, and online courses.
