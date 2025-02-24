@@ -10,6 +10,8 @@ streamlit
 langchain
 langchain-google-genai
 chromadb
+langchain-chroma
+
 
 google-generativeai
 google-api-core
