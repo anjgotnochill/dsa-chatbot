@@ -3,6 +3,11 @@ DSA Companion: A RAG-Based Data Structures and Algorithms Chatbot
 ![BOT_IMG](https://github.com/user-attachments/assets/6bbd4a57-8bcb-4a39-9256-ca76e79b46a2)
 
 {Humour is added in the prompt for the response in the image , you can always customise it and change the frontend tags!!!}
+
+![bot1_img](https://github.com/user-attachments/assets/b9045381-1515-477d-95a0-fdf62c228652)
+
+![bot2_img](https://github.com/user-attachments/assets/1811c506-be4f-457e-acf6-a3cdc9d4831f)
+
 1. Overview :
 DSA Companion is a Retrieval-Augmented Generation (RAG)-based chatbot designed to assist students and professionals in mastering Data Structures and Algorithms (DSA). It provides personalized guidance, explanations, and coding solutions to enhance problem-solving skills.
 
@@ -16,7 +21,7 @@ iii.RAG-Based Approach: Retrieves relevant data from sources such as GitHub, com
 
 iv.Code Suggestions: Offers optimized C++ solutions for interview preparation.
 
-3.Tech Stack :
+3. Tech Stack :
 
 ~Backend: Python (Flask)
 
@@ -28,7 +33,7 @@ iv.Code Suggestions: Offers optimized C++ solutions for interview preparation.
 
 ~Deployment: Web hosting for accessibility
 
-4.File Structure :
+4. File Structure :
 
 ├── backend.py        # Handles chatbot logic and API integration
 
@@ -42,7 +47,7 @@ iv.Code Suggestions: Offers optimized C++ solutions for interview preparation.
 
 ├── README.md         # Project documentation (this file)
 
-5.Installation & Setup :
+5. Installation & Setup :
 
 $ Prerequisites :
 
@@ -77,7 +82,7 @@ $ Deployment :
 To deploy, you can use platforms like Streamlit Sharing, Heroku, Vercel, or AWS.
 Ensure all necessary environment variables (API keys, database credentials) are configured securely.
 
-6.Future Improvements :
+6. Future Improvements :
 
 Integration with additional competitive programming platforms.
 
@@ -85,9 +90,9 @@ Enhanced NLP capabilities for better code explanations.
 
 Interactive coding environment support.
 
-7.Contributing :
+7. Contributing :
 Feel free to contribute by submitting issues or pull requests.
 
-8.Contact :
+8. Contact :
 For queries, reach out to anjalipatel200401@gmail.com.
 
