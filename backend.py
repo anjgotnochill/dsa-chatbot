@@ -5,14 +5,11 @@ from langchain.chains import ConversationalRetrievalChain
 from langchain.prompts import PromptTemplate
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from langchain.memory import ConversationBufferMemory
-from dotenv import load_dotenv
 from flask import Flask, request, jsonify
 
-load_dotenv()
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-if not GOOGLE_API_KEY:
-    raise ValueError("Missing GOOGLE_API_KEY. Set it in the .env file.")
-PERSIST_DIRECTORY = r"C:\\Users\\DC\\Downloads\\phirse" #CHANGE IT TO YOUR PATH
+os.environ["GOOGLE_API_KEY"] = "YOUR_API_KEY"
+PERSIST_DIRECTORY = r"YOU_SYSTEM_PATH" 
+
 
 # Initialize embeddings and vector store 
 embeddings = GoogleGenerativeAIEmbeddings(
