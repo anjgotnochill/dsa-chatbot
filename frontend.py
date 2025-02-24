@@ -1,12 +1,14 @@
 import streamlit as st
 import base64
 from backend import answer_question
+
 from backend import chatbot  
 
 st.set_page_config(page_title="DSAmaiMadad", page_icon="🪐", layout="wide")
 
 
-background_image = "PATH"  
+background_image = "C:\\Users\\DC\\Downloads\\phirse\\9764d489-add8-4033-b052-fde0b79fbaa6.jpg"
+# C:\\Users\\DC\\Downloads\\phirse\\img.jpeg
 st.markdown(
     f"""
     <style>
@@ -61,7 +63,8 @@ if prompt := st.chat_input("Batao..."):
 #  Clear Chat Button  
 if st.button("🌙 Clear Chat"):
     st.session_state.messages = []
-    st.rerun() 
+    st.rerun()  # ✅ Refreshes the page
 
 
-
+# iface = gr.Interface(fn=chatbot, inputs="text", outputs="text")
+# iface.launch(server_name="0.0.0.0", server_port=7860)
