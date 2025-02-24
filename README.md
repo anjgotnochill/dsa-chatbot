@@ -7,29 +7,47 @@ DSA Companion is a Retrieval-Augmented Generation (RAG)-based chatbot designed t
 2. Features :
    
 i.DSA Guidance: Offers explanations for various data structures and algorithms.
+
 ii.Problem-Solving Assistance: Provides solutions to coding problems with time and space complexity analysis.
+
 iii.RAG-Based Approach: Retrieves relevant data from sources such as GitHub, competitive programming platforms, textbooks, and online courses.
+
 iv.Code Suggestions: Offers optimized C++ solutions for interview preparation.
 
 3.Tech Stack :
+
 ~Backend: Python (Flask)
+
 ~Frontend: Streamlit (or another web framework)
+
 ~LLM API: Gemini API (for chatbot responses)
+
 ~Database: Vector database (e.g., FAISS, Pinecone) for document retrieval
+
 ~Deployment: Web hosting for accessibility
 
 4.File Structure :
+
 ├── backend.py        # Handles chatbot logic and API integration
+
 ├── frontend.py       # Manages user interface
+
 ├── ingest.py         # Processes and stores data for retrieval
+
 ├── ingesturl.py      # Fetches and ingests data from external sources
+
 ├── requirements.txt  # Dependencies list
+
 ├── README.md         # Project documentation (this file)
 
 5.Installation & Setup :
+
 $ Prerequisites :
+
 ~Python 3.x
+
 ~Pip (Python package manager)
+
 ~API key for Gemini API
 
 $ Steps :
